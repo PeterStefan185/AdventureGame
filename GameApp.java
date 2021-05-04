@@ -85,22 +85,22 @@ public class GameApp extends Application
     void handleKeyPress(KeyEvent e) 
     {
         
-        if (e.getCode() == KeyCode.W)
+        if (e.getCode() == KeyCode.W || e.getCode() == KeyCode.UP)
         {
             game.player.moveUp();
             finishTurn();
         }
-        else if (e.getCode() == KeyCode.S)
+        else if (e.getCode() == KeyCode.S || e.getCode() == KeyCode.DOWN)
         {
             game.player.moveDown();
             finishTurn();
         }
-        else if (e.getCode() == KeyCode.A)
+        else if (e.getCode() == KeyCode.A || e.getCode() == KeyCode.LEFT)
         {
             game.player.moveLeft();
             finishTurn();
         }
-        else if (e.getCode() == KeyCode.D)
+        else if (e.getCode() == KeyCode.D || e.getCode() == KeyCode.RIGHT)
         {
             game.player.moveRight();
             finishTurn();

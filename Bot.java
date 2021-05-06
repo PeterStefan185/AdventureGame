@@ -12,3 +12,4 @@ class Bot extends Piece
         renderer.drawPieceOnBoard(currentLocation.x, currentLocation.y, color, "SQUARE");
     }
 }
+//pebsi lol ur dumb - Blake

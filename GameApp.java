@@ -129,11 +129,13 @@ public class GameApp extends Application
     {
         mouseX = e.getSceneX();
         mouseY = e.getSceneY();
-
+        
         Square clickedSquare = getSquareFromCanvasCoords(mouseX, mouseY);
-
+        
         selectedSquare = clickedSquare;
+        game.player.move(selectedSquare);
         renderGame();
+        
     }
 
     void updateHoveredSquare()
@@ -145,16 +147,16 @@ public class GameApp extends Application
     private Square getSquareFromCanvasCoords(double canvasX, double canvasY)
     {
         Square s = null;
-
+        
         int x = canvas.convertToBoardX(canvasX);
         int y = canvas.convertToBoardY(canvasY);
-
+        
         if (x >= 0 && x < game.board.WIDTH && y >=0 && y < game.board.HEIGHT)
         {
             int index = y * game.board.HEIGHT + x;
             s = game.board.squares[index];
         }
-
+        
         return s;
     }
     

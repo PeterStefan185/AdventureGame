@@ -160,7 +160,14 @@ public class GameApp extends Application
     
     void resetLevel()
     {
-        try{this.game = new Game();} catch (Exception e) {}
+        try
+        {
+            this.game = new Game();
+        } 
+        catch (Exception e) 
+        {
+            
+        }
         game.loadCanvas(canvas);
     }
 

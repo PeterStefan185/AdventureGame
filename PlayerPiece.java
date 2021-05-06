@@ -6,7 +6,7 @@ public class PlayerPiece extends Piece
     PlayerPiece(Square startingLocation)
     {
         super(startingLocation);
-        this.color = "BLUE";
+        this.color = "Turquoise";
         this.direction = "UP";
     }
     

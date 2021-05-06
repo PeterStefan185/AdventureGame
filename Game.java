@@ -33,10 +33,7 @@ public class Game
     }
     void teleport()
     {
-        if (player.currentLocation.canTeleport() == true)
-        {
-            player.currentLocation = 
-        }
+        
     }
     
     boolean isGameOver()

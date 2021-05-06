@@ -134,8 +134,10 @@ public class GameApp extends Application
         
         selectedSquare = clickedSquare;
         game.player.move(selectedSquare);
-        renderGame();
         
+        game.player.move(selectedSquare);
+        
+        renderGame();
     }
 
     void updateHoveredSquare()

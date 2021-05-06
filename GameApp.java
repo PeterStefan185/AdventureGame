@@ -134,7 +134,7 @@ public class GameApp extends Application
         
         selectedSquare = clickedSquare;
         
-        if (selectedSquare == Square.portalBlock)
+        if (selectedSquare.getClass() == PortalBlock.class )
         {
             game.player.move(selectedSquare);
         }   

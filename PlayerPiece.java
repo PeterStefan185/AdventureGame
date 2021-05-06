@@ -63,5 +63,4 @@ public class PlayerPiece extends Piece
         
     }
     
-    
 }

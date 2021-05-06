@@ -9,4 +9,8 @@ public class PortalBlock extends Square
         fillColor = "PINK";
     }
     
+    boolean canTeleport()
+    {
+        return true;
+    }
 }

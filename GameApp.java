@@ -163,7 +163,9 @@ public class GameApp extends Application
         try{this.game = new Game();} catch (Exception e) {}
         game.loadCanvas(canvas);
     }
-
+    void teleport()
+    {
+    }
     
     void finishTurn()    
     {

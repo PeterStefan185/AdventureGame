@@ -62,6 +62,10 @@ public class PlayerPiece extends Piece
         
         
     }
+    void teleportSelectedSquare()
+    {
+        
+    }
     
     
 }

@@ -113,6 +113,10 @@ public class GameApp extends Application
         }
         renderGame();
     }
+    void yourmom()
+    {
+        
+    }
 
     ///////////////////////////////////////////////////
     // mouse events
@@ -134,7 +138,7 @@ public class GameApp extends Application
         
         selectedSquare = clickedSquare;
         
-        if (selectedSquare.getClass() == PortalBlock.class )
+        if (selectedSquare.getClass() == PortalBlock.class   )
         {
             game.player.move(selectedSquare);
         }   

@@ -114,9 +114,9 @@ class Board
             {
                 piece = new Bot(square);
             }
-            else if (symbol == 'i')
+            else if (symbol == 'k')
             {
-                piece = new Item(square);
+                piece = new Key(square);
             }
             else
             {

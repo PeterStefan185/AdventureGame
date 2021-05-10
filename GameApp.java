@@ -133,10 +133,10 @@ public class GameApp extends Application
         Square clickedSquare = getSquareFromCanvasCoords(mouseX, mouseY);
         
         selectedSquare = clickedSquare;
-        game.player.move(selectedSquare);
         
+        if(selectedSquare.getClass() == PortalBlock.class){
         game.player.move(selectedSquare);
-        
+        }
         renderGame();
     }
 

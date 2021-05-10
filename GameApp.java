@@ -113,10 +113,7 @@ public class GameApp extends Application
         }
         renderGame();
     }
-    void yourmom()
-    {
-        
-    }
+    
 
     ///////////////////////////////////////////////////
     // mouse events

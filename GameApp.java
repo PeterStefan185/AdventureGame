@@ -134,13 +134,19 @@ public class GameApp extends Application
         Square clickedSquare = getSquareFromCanvasCoords(mouseX, mouseY);
         
         selectedSquare = clickedSquare;
+
         
         if (selectedSquare.getClass() == PortalBlock.class   )
         {
             game.player.move(selectedSquare);
         }   
         renderGame();
+
         
+        if(selectedSquare.getClass() == PortalBlock.class){
+        game.player.move(selectedSquare);
+        }
+        renderGame();
     }
 
     void updateHoveredSquare()
@@ -177,7 +183,9 @@ public class GameApp extends Application
         }
         game.loadCanvas(canvas);
     }
-
+    void teleport()
+    {
+    }
     
     void finishTurn()    
     {

@@ -31,6 +31,10 @@ class Square
     {
         return false;
     }
+    boolean canTeleport()
+    {
+        return false;
+    }
     
     boolean canAddPiece(Piece p)
     {

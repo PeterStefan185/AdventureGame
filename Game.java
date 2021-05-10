@@ -31,7 +31,10 @@ public class Game
         }
         return false;
     }
-    
+    void teleport()
+    {
+        
+    }
     
     boolean isGameOver()
     {

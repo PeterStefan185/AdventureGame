@@ -1,6 +1,6 @@
-class Item extends Piece
+class Key extends Piece
 {
-    Item(Square startingLocation)
+    Key(Square startingLocation)
     {
         super(startingLocation);
     }

@@ -43,7 +43,9 @@ public class Game
 
     void startNextTurn()
     {
+        checkForKey();
         turn++;
+        
     }
 
     ///////////////////////////////////////////////////////
@@ -71,4 +73,21 @@ public class Game
             }
         }
     }
+    void checkForKey()
+    {
+        for (Square s: board.squares)
+        {
+            for (Piece p: s.pieces)
+            {
+                if (p.getClass() == Key.class)
+                {
+                    player.inventory.add(p); 
+                    s.pieces.remove(p);
+                    //remove key from board
+                    // add key to players inventory 
+                }
+            }
+        }
+    }
+    
 }

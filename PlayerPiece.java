@@ -1,8 +1,8 @@
-
+import java.util.ArrayList;
 public class PlayerPiece extends Piece
 {
     String direction;
-    
+    ArrayList<Piece> inventory = new ArrayList<Piece>();
     PlayerPiece(Square startingLocation)
     {
         super(startingLocation);

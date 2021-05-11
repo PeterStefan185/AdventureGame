@@ -5,6 +5,7 @@ class Key extends Piece
         super(startingLocation);
     }
     
+    
     boolean canMove()
     {
         return false;

@@ -10,7 +10,6 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.KeyCode;
 import javafx.event.EventHandler;
 
-
 public class GameApp extends Application
 {
     Game game;
@@ -84,7 +83,7 @@ public class GameApp extends Application
 
     void handleKeyPress(KeyEvent e) 
     {
-        
+
         if (e.getCode() == KeyCode.W || e.getCode() == KeyCode.UP)
         {
             game.player.moveUp();
@@ -108,12 +107,10 @@ public class GameApp extends Application
         else if (e.getCode() == KeyCode.R)
         {
             resetLevel();
-            
-            
+
         }
         renderGame();
     }
-    
 
     ///////////////////////////////////////////////////
     // mouse events
@@ -130,17 +127,19 @@ public class GameApp extends Application
     {
         mouseX = e.getSceneX();
         mouseY = e.getSceneY();
-        
+
         Square clickedSquare = getSquareFromCanvasCoords(mouseX, mouseY);
-        
+
         selectedSquare = clickedSquare;
 
         if(selectedSquare.getClass() == PortalBlock.class){
-        game.player.move(selectedSquare);
+            if(selectedSquare.distance(game.player.currentLocation) < 3){
+                game.player.move(selectedSquare);
+            }
         }
         renderGame();
     }
-
+void distance(square square 
     void updateHoveredSquare()
     {
         hoveredSquare = getSquareFromCanvasCoords(mouseX, mouseY);
@@ -150,19 +149,19 @@ public class GameApp extends Application
     private Square getSquareFromCanvasCoords(double canvasX, double canvasY)
     {
         Square s = null;
-        
+
         int x = canvas.convertToBoardX(canvasX);
         int y = canvas.convertToBoardY(canvasY);
-        
+
         if (x >= 0 && x < game.board.WIDTH && y >=0 && y < game.board.HEIGHT)
         {
             int index = y * game.board.HEIGHT + x;
             s = game.board.squares[index];
         }
-        
+
         return s;
     }
-    
+
     void resetLevel()
     {
         try
@@ -171,14 +170,15 @@ public class GameApp extends Application
         } 
         catch (Exception e) 
         {
-            
+
         }
         game.loadCanvas(canvas);
     }
+
     void teleport()
     {
     }
-    
+
     void finishTurn()    
     {
         game.startNextTurn();

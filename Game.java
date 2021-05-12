@@ -79,7 +79,7 @@ public class Game
         {
             for (Piece p: s.pieces)
             {
-                if (p.getClass() == Key.class)
+                if (p.getClass() == Key.class && player.currentLocation == p.currentLocation)
                 {
                     player.inventory.add(p); 
                     s.pieces.remove(p);

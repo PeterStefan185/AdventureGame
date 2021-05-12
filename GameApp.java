@@ -132,14 +132,16 @@ public class GameApp extends Application
 
         selectedSquare = clickedSquare;
 
-        if(selectedSquare.getClass() == PortalBlock.class){
-            if(selectedSquare.distance(game.player, selectedSquare) < 3){
+        if(selectedSquare.getClass() == PortalBlock.class)
+        {
+            if(selectedSquare.distance(game.player, selectedSquare) < 3)
+            {
                 game.player.move(selectedSquare);
             }
         }
         renderGame();
     }
-    
+
     void updateHoveredSquare()
     {
         hoveredSquare = getSquareFromCanvasCoords(mouseX, mouseY);

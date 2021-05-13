@@ -136,8 +136,8 @@ public class GameApp extends Application
             if(selectedSquare.distanceY(game.player, selectedSquare) <= 3 && selectedSquare.distanceX(game.player, selectedSquare) <= 3){
                 game.player.move(selectedSquare);
 
+                renderGame();
             }
-            renderGame();
         }
     }
 
@@ -162,7 +162,7 @@ public class GameApp extends Application
 
         return s;
     }
-    
+
     void resetLevel()
     {
         try

@@ -50,7 +50,7 @@ class Square
        
         Square start = p.currentLocation;
        
-        d = Math.sqrt((start.x - selected.x) ^ 2);
+        d = start.x - selected.x;
         return d;
     }
     boolean canAddPiece(Piece p)

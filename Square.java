@@ -35,7 +35,24 @@ class Square
     {
         return false;
     }
-    
+    double distanceY(PlayerPiece p, Square selected)
+    {
+        double d = 0;
+       
+        Square start = p.currentLocation;
+       
+        d = start.y - selected.y;
+        return d;
+    }
+    double distanceX(PlayerPiece p, Square selected)
+    {
+        double d = 0;
+       
+        Square start = p.currentLocation;
+       
+        d = Math.sqrt((start.x - selected.x) ^ 2);
+        return d;
+    }
     boolean canAddPiece(Piece p)
     {
         if (!pieces.contains(p) && pieces.size() < maxPieceCapacity)
@@ -70,25 +87,7 @@ class Square
             pieces.remove(p);
         }
     }
-
-    double distanceX(PlayerPiece p, Square selected)
-    {
-        double d = 0;
-        
-        Square start = p.currentLocation;
-        
-        d = start.x - selected.x;
-        return d;
-    }
-    double distanceY(PlayerPiece p, Square selected)
-    {
-        double d = 0;
-        
-        Square start = p.currentLocation;
-        
-        d = start.y - selected.y;
-        return d;
-    }
+    
     ///////////////////////////////////////////////////////
     // rendering methods
     

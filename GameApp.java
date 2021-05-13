@@ -134,14 +134,14 @@ public class GameApp extends Application
 
         if(selectedSquare.getClass() == PortalBlock.class)
         {
-            if(selectedSquare.distanceX(game.player, selectedSquare) < 3 && selectedSquare.distanceX(game.player, selectedSquare) > -3 && selectedSquare.distanceY(game.player, selectedSquare) < 3 && selectedSquare.distanceY(game.player, selectedSquare) > -3)
+            if(selectedSquare.distanceY(game.player, selectedSquare) <= 3 && selectedSquare.distanceX(game.player, selectedSquare) <= 3)
             {
                 game.player.move(selectedSquare);
             }
+            }
+            renderGame();
         }
-        renderGame();
-    }
-
+        
     void updateHoveredSquare()
     {
         hoveredSquare = getSquareFromCanvasCoords(mouseX, mouseY);
@@ -163,7 +163,7 @@ public class GameApp extends Application
 
         return s;
     }
-
+    
     void resetLevel()
     {
         try

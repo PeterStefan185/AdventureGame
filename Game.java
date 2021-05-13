@@ -34,7 +34,7 @@ public class Game
                 board = new Board(16,16, "boards/board2.txt");
                 board.loadPieces("pieces/level2.txt");
 
-                
+                player = new PlayerPiece(board.getSquare(0,0));
             }
         }
         

@@ -71,16 +71,24 @@ class Square
         }
     }
 
-    double distance(PlayerPiece p, Square selected)
+    double distanceX(PlayerPiece p, Square selected)
     {
         double d = 0;
         
         Square start = p.currentLocation;
         
-        d = Math.sqrt((start.x - selected.x) ^ 2 + (start.y - selected.y) ^ 2);
+        d = start.x - selected.x;
         return d;
     }
-    
+    double distanceY(PlayerPiece p, Square selected)
+    {
+        double d = 0;
+        
+        Square start = p.currentLocation;
+        
+        d = start.y - selected.y;
+        return d;
+    }
     ///////////////////////////////////////////////////////
     // rendering methods
     

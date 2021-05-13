@@ -134,7 +134,7 @@ public class GameApp extends Application
 
         if(selectedSquare.getClass() == PortalBlock.class)
         {
-            if(selectedSquare.distance(game.player, selectedSquare) < 3)
+            if(selectedSquare.distanceX(game.player, selectedSquare) < 3 && selectedSquare.distanceX(game.player, selectedSquare) > -3 && selectedSquare.distanceY(game.player, selectedSquare) < 3 && selectedSquare.distanceY(game.player, selectedSquare) > -3)
             {
                 game.player.move(selectedSquare);
             }

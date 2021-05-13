@@ -163,7 +163,7 @@ public class GameApp extends Application
 
         return s;
     }
-    
+
     void resetLevel()
     {
         try

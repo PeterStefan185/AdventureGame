@@ -23,7 +23,6 @@ public class Game
 
         player = new PlayerPiece(board.getSquare(0,0));
     }
-    
     void levelIsComplete() 
     throws FileNotFoundException
     {
@@ -37,9 +36,8 @@ public class Game
                 player = new PlayerPiece(board.getSquare(0,0));
             }
         }
-        
     }
-    
+
     boolean playerIsDead()
     {
         if (player.currentLocation.kill() == true)
@@ -48,12 +46,12 @@ public class Game
         }
         return false;
     }
-    
+
     void teleport()
     {
-        
+
     }
-    
+
     boolean isGameOver()
     {
         return false;
@@ -63,7 +61,7 @@ public class Game
     {
         checkForKey();
         turn++;
-        
+
     }
 
     ///////////////////////////////////////////////////////
@@ -91,6 +89,7 @@ public class Game
             }
         }
     }
+
     void checkForKey()
     {
         for (Square s: board.squares)
@@ -107,5 +106,5 @@ public class Game
             }
         }
     }
-    
+
 }

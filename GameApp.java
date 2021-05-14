@@ -141,8 +141,8 @@ public class GameApp extends Application
             }
         }
         renderGame();
-        }
-        
+    }
+
     void updateHoveredSquare()
     {
         hoveredSquare = getSquareFromCanvasCoords(mouseX, mouseY);
@@ -181,19 +181,19 @@ public class GameApp extends Application
     void teleport()
     {
     }
-    void levelIsComplete() 
-    throws FileNotFoundException
+
+    void advanceLevel() 
     {
 
         if (game.player.currentLocation.getClass() == Goal.class)
         {
-
-            game.board = new Board(16,16, "boards/board2.txt");
-            game.board.loadPieces("pieces/level2.txt");
-
-            game.player  = new PlayerPiece(game.board.getSquare(0,0));
+            game.level++;
+            game.board = game.levels[game.level - 1];
+            game.player = new PlayerPiece(game.board.getSquare(0,0));
+            game.player.loadRenderer(canvas.pieceRenderer);
         }
     }
+
     void finishTurn()    
     {
         game.startNextTurn();
@@ -203,11 +203,11 @@ public class GameApp extends Application
         }
         try
         {
-            levelIsComplete();
+            advanceLevel();
         } 
         catch (Exception e) 
         {
-        
+
         };
         renderGame();
     }

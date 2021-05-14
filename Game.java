@@ -9,6 +9,7 @@ public class Game
     GameCanvas canvas;
 
     int turn = 0;
+    int level;
     PlayerPiece player;
 
     /**
@@ -19,36 +20,26 @@ public class Game
     {
         // load board squares from a text file
         this.levels = new Board[5];
+        this.level = 1;
 
         // LEVEL 1
         levels[0] = new Board(8,8, "boards/board1.txt");
         levels[0].loadPieces("pieces/level1.txt");
+        // LEVEL 2
         levels[1] = new Board(10,10, "boards/board2.txt");
         levels[1].loadPieces("pieces/level2.txt");
+        // LEVEL 3
         levels[2] = new Board(12,12, "boards/board3.txt");
         levels[2].loadPieces("pieces/level3.txt");
+        // LEVEL 4
         levels[3] = new Board(14,14, "boards/board4.txt");
         levels[3].loadPieces("pieces/level4.txt");
+        // LEVEL 5
         levels[4] = new Board(16,16, "boards/board5.txt");
         levels[4].loadPieces("pieces/level5.txt");
 
-        player = new PlayerPiece(board.getSquare(0,0));
         board = levels[0];
-    }
-
-    void levelIsComplete() 
-    throws FileNotFoundException
-    {
-        for (Square s: board.squares)
-        {
-            if (s.getClass() == Goal.class && player.currentLocation == s)
-            {
-                board = new Board(16,16, "boards/board2.txt");
-                board.loadPieces("pieces/level2.txt");
-
-                player = new PlayerPiece(board.getSquare(0,0));
-            }
-        }
+        player = new PlayerPiece(board.getSquare(0,0));
     }
 
     boolean playerIsDead()

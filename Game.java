@@ -5,7 +5,7 @@ public class Game
 {
 
     Board board;
-
+    Board[] levels;
     GameCanvas canvas;
 
     int turn = 0;
@@ -18,8 +18,19 @@ public class Game
     throws FileNotFoundException
     {
         // load board squares from a text file
-        board = new Board(16,16, "boards/board1.txt");
-        board.loadPieces("pieces/level1.txt");
+         this.levels = new Board[5];
+        
+        // LEVEL 1
+        levels[0] = new Board(8,8, "boards/board1.txt");
+        levels[0].loadPieces("pieces/level1.txt");
+        levels[1] = new Board(10,10, "boards/board2.txt");
+        levels[1].loadPieces("pieces/level2.txt");
+        levels[2] = new Board(12,12, "boards/board3.txt");
+        levels[2].loadPieces("pieces/level3.txt");
+        levels[3] = new Board(14,14, "boards/board4.txt");
+        levels[3].loadPieces("pieces/level4.txt");
+        levels[4] = new Board(16,16, "boards/board5.txt");
+        levels[4].loadPieces("pieces/level5.txt");
 
         player = new PlayerPiece(board.getSquare(0,0));
     }

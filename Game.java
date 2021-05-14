@@ -18,8 +18,8 @@ public class Game
     throws FileNotFoundException
     {
         // load board squares from a text file
-         this.levels = new Board[5];
-        
+        this.levels = new Board[5];
+
         // LEVEL 1
         levels[0] = new Board(8,8, "boards/board1.txt");
         levels[0].loadPieces("pieces/level1.txt");
@@ -33,7 +33,9 @@ public class Game
         levels[4].loadPieces("pieces/level5.txt");
 
         player = new PlayerPiece(board.getSquare(0,0));
+        board = levels[0];
     }
+
     void levelIsComplete() 
     throws FileNotFoundException
     {
@@ -81,22 +83,24 @@ public class Game
     void loadCanvas(GameCanvas canvas)
     {
         this.canvas = canvas;
-
-        // assign boardRenderer to the board
-        board.loadRenderer(canvas.boardRenderer);
-
-        // assign squareRenderer renderer to every square
-        for (Square s : board.squares)
+        for (Board b : levels)
         {
-            s.loadRenderer(canvas.squareRenderer);
-        }
+            // assign boardRenderer to the board
+            b.loadRenderer(canvas.boardRenderer);
 
-        // assign pieceRenderer renderer to every piece
-        for (Square square : board.squares)
-        {
-            for (Piece p : square.pieces)
+            // assign squareRenderer renderer to every square
+            for (Square s : b.squares)
             {
-                p.loadRenderer(canvas.pieceRenderer);
+                s.loadRenderer(canvas.squareRenderer);
+            }
+
+            // assign pieceRenderer renderer to every piece
+            for (Square square : b.squares)
+            {
+                for (Piece p : square.pieces)
+                {
+                    p.loadRenderer(canvas.pieceRenderer);
+                }
             }
         }
     }

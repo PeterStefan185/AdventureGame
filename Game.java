@@ -9,6 +9,7 @@ public class Game
     GameCanvas canvas;
 
     int turn = 0;
+    int level = 1;
     PlayerPiece player;
 
     /**
@@ -32,23 +33,8 @@ public class Game
         levels[4] = new Board(16,16, "boards/board5.txt");
         levels[4].loadPieces("pieces/level5.txt");
 
-        player = new PlayerPiece(board.getSquare(0,0));
         board = levels[0];
-    }
-
-    void levelIsComplete() 
-    throws FileNotFoundException
-    {
-        for (Square s: board.squares)
-        {
-            if (s.getClass() == Goal.class && player.currentLocation == s)
-            {
-                board = new Board(16,16, "boards/board2.txt");
-                board.loadPieces("pieces/level2.txt");
-
-                player = new PlayerPiece(board.getSquare(0,0));
-            }
-        }
+        player = new PlayerPiece(board.getSquare(0,0));
     }
 
     boolean playerIsDead()

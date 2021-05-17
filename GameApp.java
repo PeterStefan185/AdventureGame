@@ -181,17 +181,15 @@ public class GameApp extends Application
     void teleport()
     {
     }
-    void levelIsComplete() 
+    void advanceLevel()
     throws FileNotFoundException
     {
 
         if (game.player.currentLocation.getClass() == Goal.class)
         {
-
-            game.board = new Board(16,16, "boards/board2.txt");
-            game.board.loadPieces("pieces/level2.txt");
-
-            game.player  = new PlayerPiece(game.board.getSquare(0,0));
+            game.level++;
+            game.board = game.levels[game.level - 1];
+            game.player = new PlayerPiece(game.board.getSquare(0,0));
         }
     }
     void finishTurn()    
@@ -203,7 +201,7 @@ public class GameApp extends Application
         }
         try
         {
-            levelIsComplete();
+            advanceLevel();
         } 
         catch (Exception e) 
         {

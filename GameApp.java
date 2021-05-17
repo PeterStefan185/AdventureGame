@@ -182,7 +182,9 @@ public class GameApp extends Application
     {
     }
 
-    void advanceLevel() 
+    void advanceLevel()
+    throws FileNotFoundException
+
     {
 
         if (game.player.currentLocation.getClass() == Goal.class)
@@ -191,6 +193,7 @@ public class GameApp extends Application
             game.board = game.levels[game.level - 1];
             game.player = new PlayerPiece(game.board.getSquare(0,0));
             game.player.loadRenderer(canvas.pieceRenderer);
+
         }
     }
 

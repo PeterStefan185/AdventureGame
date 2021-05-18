@@ -19,7 +19,7 @@ public class Game
     throws FileNotFoundException
     {
         // load board squares from a text file
-        this.levels = new Board[5];
+        this.levels = new Board[6];
         this.level = 1;
 
         // LEVEL 1
@@ -37,7 +37,10 @@ public class Game
         // LEVEL 5
         levels[4] = new Board(16,16, "boards/board5.txt");
         levels[4].loadPieces("pieces/level5.txt");
-
+        //THE END
+        levels[5] = new Board(16,16, "boards/board6.txt");
+        levels[5].loadPieces("pieces/level6.txt");
+        
         board = levels[0];
         player = new PlayerPiece(board.getSquare(0,0));
     }
@@ -112,5 +115,12 @@ public class Game
             }
         }
     }
-
+    boolean hasKey()
+    {
+        if(player.inventory.size() >= 1)
+        {
+            return true;
+        }
+        return false;
+    }
 }

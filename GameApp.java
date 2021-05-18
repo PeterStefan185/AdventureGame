@@ -187,7 +187,7 @@ public class GameApp extends Application
 
     {
 
-        if (game.player.currentLocation.getClass() == Goal.class)
+        if (game.player.currentLocation.getClass() == Goal.class && game.hasKey() == true)
         {
             game.level++;
             game.board = game.levels[game.level - 1];

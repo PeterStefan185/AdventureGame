@@ -21,8 +21,8 @@ public class GameCanvas extends Canvas
     GameCanvas(int boardWidth, int boardHeight)
     {
         super(); 
-        this.setWidth(boardWidth * SQUARE_WIDTH + 2 * MARGIN);
-        this.setHeight(boardHeight * SQUARE_HEIGHT + 2 * MARGIN);
+        this.setWidth(16 * SQUARE_WIDTH + 2 * MARGIN);
+        this.setHeight(16 * SQUARE_HEIGHT + 2 * MARGIN);
 
         //initialize renderers
         boardRenderer = new BoardRenderer();
